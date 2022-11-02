@@ -275,3 +275,75 @@ nothing to commit, working tree clean
 PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (dev)
 $
 ```
+
+## Bundle 2
+
+### Exercise 1
+
+```bash PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (dev)
+$ ls
+README.md  about.html  home.html
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (dev)
+$ git checkout -b ft-bundle2
+Switched to a new branch 'ft-bundle2'
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ git status
+On branch ft-bundle2
+nothing to commit, working tree clean
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ nano service.html
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ git status
+On branch ft-bundle2
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        service.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ git add .
+warning: in the working copy of 'service.html', LF will be replaced by CRLF the
+next time Git touches it
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ git commit -m 'Create a service page'
+[ft-bundle2 921e0d9] Create a service page
+ 1 file changed, 10 insertions(+)
+ create mode 100644 service.html
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ git push
+fatal: The current branch ft-bundle2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft-bundle2
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ git push --set-upstream origin ft-bundle2
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 461 bytes | 461.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft-bundle2' on GitHub by visiting:
+remote:      https://github.com/ishoborabyose/git-exercise/pull/new/ft-bundle2
+remote:
+To https://github.com/ishoborabyose/git-exercise.git
+ * [new branch]      ft-bundle2 -> ft-bundle2
+branch 'ft-bundle2' set up to track 'origin/ft-bundle2'.
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$
+```
