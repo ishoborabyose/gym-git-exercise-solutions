@@ -347,3 +347,212 @@ branch 'ft-bundle2' set up to track 'origin/ft-bundle2'.
 PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
 $
 ```
+
+### Exercise 2
+
+```bash
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym
+$ cd git-exercise
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ ls
+README.md  about.html  home.html  service.html
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft-bundle2)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 637 bytes | 91.00 KiB/s, done.
+From https://github.com/ishoborabyose/git-exercise
+   a48a812..219960b  main       -> origin/main
+Updating a48a812..219960b
+Fast-forward
+ about.html   | 10 ++++++++++
+ home.html    | 10 ++++++++++
+ service.html | 10 ++++++++++
+ 3 files changed, 30 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+ create mode 100644 service.html
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git branch ft/service-redesign
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ nano service.html
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git status
+On branch ft/service-redesign
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   service.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git add .
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git commit -m 'Change some stuff'
+[ft/service-redesign 255e73c] Change some stuff
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 333 bytes | 333.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/ishoborabyose/git-exercise/pull/new/ft/service-r
+edesign
+remote:
+To https://github.com/ishoborabyose/git-exercise.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+branch 'ft/service-redesign' set up to track 'origin/ft/service-redesign'.
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ ls
+README.md  about.html  home.html  service.html
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ nano service.html
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   service.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git add .
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git commit -m 'Added changes to services'
+[main 0c11efb] Added changes to services
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 342 bytes | 342.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ishoborabyose/git-exercise.git
+   219960b..0c11efb  main -> main
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git branch
+  dev
+  ft-bundle2
+  ft/service-redesign
+* main
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (main)
+$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git diff main
+diff --git a/service.html b/service.html
+index d545516..a1d4c09 100644
+--- a/service.html
++++ b/service.html
+@@ -7,6 +7,6 @@
+     <title>Service</title>
+   </head>
+Merge branch 'main' into ft/service-redesign
+
+[ft/service-redesign ee7edee] Merge branch 'main' into ft/service-redesign
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git log
+commit ee7edee06fecf6514f1d169f4e8813ed65cae842 (HEAD -> ft/service-redesign)
+Merge: 255e73c 0c11efb
+Author: ishoborabyose <ishoborabyosebeatrice@gmail.com>
+Date:   Thu Nov 3 21:40:08 2022 +0200
+
+    Merge branch 'main' into ft/service-redesign
+
+commit 0c11efb6e998819743c5d6fe2c8d8a5f726df77c (origin/main, main)
+Author: ishoborabyose <ishoborabyosebeatrice@gmail.com>
+Date:   Thu Nov 3 21:33:48 2022 +0200
+
+    Added changes to services
+
+commit 255e73c83bb04f16b0f807b87164d1d74819a0b5 (origin/ft/service-redesign)
+Author: ishoborabyose <ishoborabyosebeatrice@gmail.com>
+Date:   Thu Nov 3 21:27:58 2022 +0200
+
+    Change some stuff
+
+commit 219960b2b9be746c52d57c6179a98d2a6917b20b
+Merge: a48a812 921e0d9
+Author: Chrissie <chrissiemhrk@gmail.com>
+Date:   Thu Nov 3 11:00:26 2022 +0200
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git status
+On branch ft/service-redesign
+Your branch is ahead of 'origin/ft/service-redesign' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$ git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 370 bytes | 370.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/ishoborabyose/git-exercise.git
+   255e73c..ee7edee  ft/service-redesign -> ft/service-redesign
+
+PC@DESKTOP-4QE8GRN MINGW64 ~/Desktop/gym/git-exercise (ft/service-redesign)
+$
+```
